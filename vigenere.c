@@ -40,6 +40,11 @@ main(int argc, char * const *argv)
 		usage(argv[0], true);
 	}
 
+	if (key == NULL) {
+		fatal_error("must specify key");
+		usage(argv[0], true);
+	}
+
 	char const *source = argv[optind];
 	size_t src_len = strlen(source);
 
@@ -117,10 +122,10 @@ usage(char const *program_name, bool shortmenu) {
 			"  message    ASCII message to be encoded, decoded. Note that also accepts space character.\n"
 			"\n"
 			"optional arguments:\n"
-			"  -h,        show this help message and exit.\n"
-			"  -k KEY     ASCII string consists of alphabetical characters only, no punctuation or number.\n"
-			"  -e,        encodes the message.\n"
-			"  -d,        decodes the message.\n"
+			"  -h        show this help message and exit.\n"
+			"  -k KEY    ASCII string consists of alphabetical characters only, no punctuation or number.\n"
+			"  -e        encodes the message.\n"
+			"  -d        decodes the message.\n"
 			"\n"
 			"[+] Written by 15520599\n");
 	}
