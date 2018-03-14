@@ -20,8 +20,7 @@ const size_t NUMLETTERS = 26;
 enum MODE_T { ENCODE_MODE, DECODE_MODE };  // Default set
 
 int
-main(int argc, char * const *argv)
-{
+main(int argc, char * const *argv) {
 	int opt = 0;
 	enum MODE_T mode = ENCODE_MODE;
 	char *key = NULL;
@@ -71,15 +70,15 @@ main(int argc, char * const *argv)
 }
 
 int
-mod(int dividend, int divisor) {
+pmod(int dividend, int divisor) {
 	int modulus = dividend % divisor;
 	return (modulus >= 0) ? modulus : abs(divisor) + modulus;
 }
 
 char
-caesarEncode(char token, int shift) {
+caesarEncode(char token, char shift) {
 	char charcase = isupper(token) ? 'A' : 'a';
-	return mod(token - charcase + shift, NUMLETTERS) + charcase;
+	return pmod(token - charcase + shift, NUMLETTERS) + charcase;
 }
 
 int

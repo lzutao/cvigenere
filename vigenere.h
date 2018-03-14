@@ -38,13 +38,14 @@ vigenereDecode(char *result, char const *source, char const *shiftarray, size_t 
  * Usage: char ch = caesarEncode('a', 2);
  */
 extern char
-caesarEncode(char token, int shift);
+caesarEncode(char token, char shift);
 
 /**
  * Function: extend modular function to signed number
  * return: modular of dividend and divisor
  ****************************************************
  * Usage: int modular = mod(9, -7);
+ * Note: Rename from mod to pmod because of error when gcc compiles
  */
 int
-mod( int dividend, int divisor );
+pmod( int dividend, int divisor );
