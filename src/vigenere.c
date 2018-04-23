@@ -3,7 +3,7 @@
  * Function: encode and decode a vigenere string with given key
  * Supported charset: [a-z]
  */
-
+#include "config.h"
 #include "vigenere.h"
 
 void
